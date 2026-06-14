@@ -1,0 +1,12 @@
+{% block content_list %}
+    <ul class="block--article-list {{ content.list_typ|default('') }} {{ content.class|default('') }}" {{ sulu_block_preview(content) }}>
+        {% if content.blocks|default([]) %}
+            {% for block in content.blocks %}
+                {% include 'articles/blocks/' ~ block.type ~ '.html.twig' with {
+                    content: block,
+                    view: view.blocks[loop.index0],
+                } %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% endblock %}

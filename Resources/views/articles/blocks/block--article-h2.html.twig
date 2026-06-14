@@ -1,0 +1,7 @@
+{% block article_h2 %}
+    {% if content.text %}
+        <h2 class="block--article-h2"{% if content.table_of_contents %} {{ stimulus_target('article', 'tableOfContentHeading') }}{% endif %} {{ sulu_block_preview(content) }}>
+            {{ content.text|nl2br }}
+        </h2>
+    {% endif %}
+{% endblock %}

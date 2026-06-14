@@ -1,0 +1,7 @@
+{% block article_h3 %}
+    {% if content.text %}
+        <h3 class="block--article-h3" {{ sulu_block_preview(content) }}>
+            {{ content.text|nl2br }}
+        </h3>
+    {% endif %}
+{% endblock %}

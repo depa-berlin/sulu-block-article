@@ -1,0 +1,15 @@
+{% block blog_image_full %}
+    {% set image = sulu_resolve_media(content.image, app.request.locale) %}
+    {% if image|default %}
+        <picture class="block--article-image-full" {{ sulu_block_preview(content) }}>
+            <source media="(min-width: 1400px)" srcset="{{ image.thumbnails['article-1620'] }}">
+            <source media="(min-width: 1200px)" srcset="{{ image.thumbnails['article-1399'] }}">
+            <source media="(min-width: 992px)"  srcset="{{ image.thumbnails['article-1199'] }}">
+            <source media="(min-width: 768px)"  srcset="{{ image.thumbnails['article-991'] }}">
+            <source media="(min-width: 576px)"  srcset="{{ image.thumbnails['article-767'] }}">
+            <img src="{{ image.thumbnails['article-575'] }}" class="img-fluid"
+                 alt="{{ image.title|default('') }}"{% if image.description %} title="{{ image.description }}"{% endif %}
+                 loading="lazy" width="{{ image.properties.width }}" height="{{ image.properties.height }}">
+        </picture>
+    {% endif %}
+{% endblock %}

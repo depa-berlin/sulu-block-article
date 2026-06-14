@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <key>block--article-h3</key>
+    <meta>
+        <title lang="en">Headline (H3)</title>
+        <title lang="de">Überschrift (H3)</title>
+    </meta>
+    <properties>
+        <property name="text" type="text_line">
+            <!-- @see https://docs.sulu.io/en/2.2/book/extend-admin.html#selection-field-type -->
+            <meta>
+                <title lang="en">Title</title>
+                <title lang="de">Überschrift</title>
+            </meta>
+        </property>
+
+    </properties>
+</template>

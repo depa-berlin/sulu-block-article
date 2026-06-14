@@ -1,0 +1,7 @@
+{% block article_html %}
+    {% if content.html %}
+        <div class="block--article-html" {{ sulu_block_preview(content) }}>
+            {{ content.html|raw }}
+        </div>
+    {% endif %}
+{% endblock %}

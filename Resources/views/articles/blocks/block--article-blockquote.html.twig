@@ -1,0 +1,7 @@
+{% block article_blockquote %}
+    {% if content.text %}
+        <blockquote class="block--article-blockquote" {{ sulu_block_preview(content) }}>
+            <p>{{ content.text|nl2br }}</p>
+        </blockquote>
+    {% endif %}
+{% endblock %}

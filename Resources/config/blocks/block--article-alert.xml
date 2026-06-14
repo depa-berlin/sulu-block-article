@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <key>block--article-alert</key>
+    <meta>
+        <title lang="en">Alert</title>
+        <title lang="de">Alert</title>
+    </meta>
+    <properties>
+
+        <property name="variant" type="single_select" colspan="6">
+            <!-- @see https://docs.sulu.io/en/2.2/book/extend-admin.html#selection-field-type -->
+            <meta>
+                <title lang="en">Variante</title>
+                <title lang="de">Variante</title>
+            </meta>
+            <params>
+                <param name="default_value" value="info"/>
+
+                <param name="values" type="collection">
+                    <param name="info">
+                        <meta>
+                            <title lang="en">Info</title>
+                            <title lang="de">Info</title>
+                        </meta>
+                    </param>
+                    <param name="warning">
+                        <meta>
+                            <title lang="en">Warning</title>
+                            <title lang="de">Warnung</title>
+                        </meta>
+                    </param>
+                    <param name="danger">
+                        <meta>
+                            <title lang="en">Danger</title>
+                            <title lang="de">Gefahr</title>
+                        </meta>
+                    </param>
+                </param>
+            </params>
+        </property>
+
+        <property name="text" type="text_area">
+        </property>
+
+
+    </properties>
+</template>

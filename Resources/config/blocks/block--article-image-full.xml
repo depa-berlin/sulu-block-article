@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <key>block--article-image-full</key>
+    <meta>
+        <title lang="en">Image volle breite</title>
+        <title lang="de">Bild volle breite</title>
+    </meta>
+    <properties>
+        <property name="image" type="single_media_selection">
+            <params>
+                <param name="types" value="image"/>
+                <param name="formats" type="collection">
+                    <param name="article-1620" />
+                    <param name="article-1399" />
+                    <param name="article-1199" />
+                    <param name="article-991" />
+                    <param name="article-767" />
+                    <param name="article-575" />
+                </param>
+            </params>
+        </property>
+    </properties>
+</template>

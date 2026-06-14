@@ -1,0 +1,24 @@
+{% block blog_col_6_6 %}
+    <div class="block--article-col-6-6" {{ sulu_block_preview(content) }}>
+        <div>
+            {% if content.col1_blocks|default([]) %}
+                {% for block in content.col1_blocks %}
+                    {% include 'articles/blocks/' ~ block.type ~ '.html.twig' with {
+                        content: block,
+                        view: view.col1_blocks[loop.index0],
+                    } %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div>
+            {% if content.col2_blocks|default([]) %}
+                {% for block in content.col2_blocks %}
+                    {% include 'articles/blocks/' ~ block.type ~ '.html.twig' with {
+                        content: block,
+                        view: view.col2_blocks[loop.index0],
+                    } %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
