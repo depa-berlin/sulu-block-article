@@ -4,46 +4,27 @@ declare(strict_types=1);
 
 namespace Depa\SuluBlockArticleBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Depa\SuluBlockHelperBundle\DependencyInjection\AbstractBlockExtension;
 
-class SuluBlockArticleExtension extends Extension implements PrependExtensionInterface
+class SuluBlockArticleExtension extends AbstractBlockExtension
 {
-    use BlockMetadataLoaderTrait;
-
-    public function load(array $configs, ContainerBuilder $container): void
+    protected function getBundleName(): string
     {
-        $metadata = $this->loadMetadataFromXml(__DIR__ . '/../../Resources/config/blocks');
-
-        $container->setParameter('sulu_block_article.bundle_metadata', [
-            'bundle'   => 'SuluBlockArticleBundle',
-            'package'  => 'depa-berlin/sulu-block-article',
-            'blocks'   => $metadata['blocks'],
-            'children' => $metadata['children'],
-        ]);
+        return 'SuluBlockArticleBundle';
     }
 
-    public function prepend(ContainerBuilder $container): void
+    protected function getPackageName(): string
     {
-        if ($container->hasExtension('twig')) {
-            $container->prependExtensionConfig('twig', [
-                'paths' => [
-                    __DIR__ . '/../../Resources/views' => null,
-                ],
-            ]);
-        }
+        return 'depa-berlin/sulu-block-article';
+    }
 
-        if ($container->hasExtension('sulu_admin')) {
-            $container->prependExtensionConfig('sulu_admin', [
-                'templates' => [
-                    'block' => [
-                        'directories' => [
-                            'sulu_block_article' => __DIR__ . '/../../Resources/config/blocks',
-                        ],
-                    ],
-                ],
-            ]);
-        }
+    protected function getMetadataParameterName(): string
+    {
+        return 'sulu_block_article.bundle_metadata';
+    }
+
+    protected function getSuluAdminTemplateKey(): string
+    {
+        return 'sulu_block_article';
     }
 }
