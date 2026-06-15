@@ -15,7 +15,7 @@ class SuluBlockArticleExtension extends AbstractBlockExtension
 
     protected function getPackageName(): string
     {
-        return 'depa-berlin/sulu-block-article';
+        return 'depa/sulu-block-article';
     }
 
     protected function getMetadataParameterName(): string
