@@ -49,7 +49,7 @@ class SuluBlockArticleExtensionTest extends TestCase
         $this->extension->load([], $this->container);
         $meta = $this->container->getParameter('sulu_block_article.bundle_metadata');
         self::assertIsArray($meta);
-        self::assertSame('depa-berlin/sulu-block-article', $meta['package']);
+        self::assertSame('depa/sulu-block-article', $meta['package']);
     }
 
     public function testBundleMetadataContainsAtLeastOneBlock(): void
